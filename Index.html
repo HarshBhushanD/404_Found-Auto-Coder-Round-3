@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avrix - Creative Digital Studio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        body {
+            background: #0a0a0a;
+            color: white;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 4rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo::before {
+            content: "";
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background: #4a90e2;
+            border-radius: 50%;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 1;
+        }
+
+        main {
+            padding: 4rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .creative-tag {
+            color: #4a90e2;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            background: rgba(74, 144, 226, 0.1);
+        }
+
+        .hero-text {
+            font-size: 5rem;
+            font-weight: bold;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+
+        .portfolio-text {
+            font-size: 5rem;
+            font-weight: bold;
+            -webkit-text-stroke: 1px white;
+            color: transparent;
+        }
+
+        .wave-container {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 60%;
+            height: 100%;
+            z-index: 1;
+            opacity: 0.15;
+            pointer-events: none;
+        }
+
+        .wave-container svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .award-badge {
+            position: absolute;
+            right: 15%;
+            top: 55%;
+            width: 120px;
+            height: 120px;
+            animation: float 3s ease-in-out infinite;
+            z-index: 3;
+        }
+
+        .text-rotate {
+    font-size: 14px; /* Make text smaller */
+    word-spacing: 9px;
+    font-weight: 450;
+    font-family: 'roboto';
+    dominant-baseline: middle;
+}
+
+        /* .text-path{
+            text-
+        } */
+
+        .award-badge .circle {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #d84ae2, #1e90ff);
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .award-badge svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            animation: rotate 10s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem 2rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                display: flex;
+                gap: 20px; /* Adjust spacing */
+            }
+
+        .nav-links {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                    gap: 20px;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            main {
+                padding: 2rem;
+            }
+
+            .hero-text, .portfolio-text {
+                font-size: 3rem;
+            }
+
+            .wave-container {
+                width: 100%;
+                opacity: 0.1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">AVRIX</div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#pages">Pages</a>
+            <a href="#services">Services</a>
+            <a href="#blog">Blog</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <button class="menu-btn">☰</button>
+    </nav>
+
+    <div class="wave-container">
+        <svg viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+            <!-- Gradient -->
+            <defs>
+                <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style="stop-color:#4a90e2;stop-opacity:0.3" />
+                    <stop offset="100%" style="stop-color:#4a90e2;stop-opacity:0.1" />
+                </linearGradient>
+            </defs>
+
+            <!-- Wave 1 -->
+            <path fill="none" stroke="url(#gradient)" stroke-width="2">
+                <animate attributeName="d" 
+                    dur="10s" 
+                    repeatCount="indefinite" 
+                    values="
+                        M0,500 C300,400 600,600 900,500 C1200,400 1500,600 1920,500 V1080 H0 V500;
+                        M0,500 C300,600 600,400 900,500 C1200,600 1500,400 1920,500 V1080 H0 V500;
+                        M0,500 C300,400 600,600 900,500 C1200,400 1500,600 1920,500 V1080 H0 V500"
+                />
+            </path>
+
+            <!-- Wave 2 -->
+            <path fill="none" stroke="url(#gradient)" stroke-width="2" opacity="0.5">
+                <animate attributeName="d" 
+                    dur="15s" 
+                    repeatCount="indefinite" 
+                    values="
+                        M0,600 C400,500 800,700 1200,600 C1600,500 2000,700 2400,600 V1080 H0 V600;
+                        M0,600 C400,700 800,500 1200,600 C1600,700 2000,500 2400,600 V1080 H0 V600;
+                        M0,600 C400,500 800,700 1200,600 C1600,500 2000,700 2400,600 V1080 H0 V600"
+                />
+            </path>
+
+            <!-- Wave 3 -->
+            <path fill="none" stroke="url(#gradient)" stroke-width="2" opacity="0.3">
+                <animate attributeName="d" 
+                    dur="20s" 
+                    repeatCount="indefinite" 
+                    values="
+                        M0,700 C500,600 1000,800 1500,700 C2000,600 2500,800 3000,700 V1080 H0 V700;
+                        M0,700 C500,800 1000,600 1500,700 C2000,800 2500,600 3000,700 V1080 H0 V700;
+                        M0,700 C500,600 1000,800 1500,700 C2000,600 2500,800 3000,700 V1080 H0 V700"
+                />
+            </path>
+        </svg>
+    </div>
+
+    <main>
+        <span class="creative-tag">Creative digital studio</span>
+        <h1 class="hero-text">BUILD GREAT</h1>
+        <div class="portfolio-text">PORTFOLIO</div>
+        <div class="award-badge">
+            <div class="circle"></div>
+            <svg viewBox="0 0 100 100">
+                <path id="circle-text" d="M 50,50 m -37,0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="none"/>
+                <text>
+                    <textPath class="text-rotate" href="#circle-text" startOffset="0%" fill="white">
+                        AWARD WINNING AGENCY
+                    </textPath>
+                </text>
+            </svg>
+        </div>
+    </main>
+
+    <script>
+        document.querySelector('.menu-btn').addEventListener('click', () => {
+            document.querySelector('.nav-links').style.display = 
+                document.querySelector('.nav-links').style.display === 'flex' ? 'none' : 'flex';
+        });
+    </script>
+</body>
+</html>

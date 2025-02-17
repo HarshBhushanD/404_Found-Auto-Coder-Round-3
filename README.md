@@ -35,7 +35,7 @@ Accurate text placement matching the original design.
 
 Clone this repository:
 
-git clone https://github.com/yourusername/gdg-storytelling-round3.git
+git clone https://github.com/HarshBhushanD/Auto-Coder-Round-3.git
 
 Open the index.html file in a web browser.
 

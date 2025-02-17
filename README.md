@@ -25,7 +25,7 @@ CSS3
 
 Smooth, continuous circle movement.
 
-Responsive design (if implemented).
+Responsive design.
 
 Accurate text placement matching the original design.
 
